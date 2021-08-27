@@ -5,13 +5,21 @@ class MoviesList extends React.Component {
 
     render() {
         const shows = this.props.shows;
+       const  allFavorites= this.props.allFavorites;
 
         return shows.map((record) => {
+            const showId = record.show.id;
+
+            //TODO: Check if the showId is already in the favorites list
+            let addedToFavorites = false;
+
             return (
                 <MovieDetails
-                    key={record.show.id}
-                    record={record}
-                    shows={shows}
+                    onFavoriteClick={this.props.updateFavoritesList}
+                    showId={showId}
+                    show={record}
+                    addedToFavorites={addedToFavorites}
+                    allShows={shows}
                 />
             )
         })

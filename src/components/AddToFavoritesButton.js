@@ -1,24 +1,16 @@
 import React from "react";
 
 class AddToFavoritesButton extends React.Component {
-    constructor(props) {
-        super(props);
 
-        this.state = {
-            favRecords: []
-        };
-    }
-
-    onAddedToFavoritesButton = (event) => {
-        console.log(event.target.value);
-    };
 
     render() {
+
+        const {addedToFavorites} = this.props;
+
         return (
             <button
-                onClick={this.onAddedToFavoritesButton}
-                className="ui teal basic button"
-            >
+                onClick={this.props.onClick(this.props.showId)}
+                className="ui teal basic button">
                 Add to Favorites
             </button>
         );

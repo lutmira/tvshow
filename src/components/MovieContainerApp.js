@@ -5,7 +5,8 @@ class MovieContainerApp extends React.Component {
 
     state = {
         loading: false,
-        data: []
+        data: [],
+        favorites: [143, 123,7654,345]
     };
 
     getData = () => {
@@ -20,6 +21,11 @@ class MovieContainerApp extends React.Component {
             });
     };
 
+    updateFavoritesList = (showId) =>{
+        //TODO: Add the logic to add or remove tv shows from the favorites list
+        //If the show is in the list, remove it, otherwise add it
+    }
+
     componentDidMount() {
         this.getData()
     };
@@ -33,13 +39,15 @@ class MovieContainerApp extends React.Component {
                         textAlign: 'center',
                         color: 'teal',
                         fontSize: '30px'
-                    }}
-                >
+                    }}>
                     Tv Shows
                 </div>
                 <div className="ui segment">
                     <div className="ui celled table">
+                        {/* <MovieListTable shows={this.state.data}/> */}
                         <MoviesList
+                            updateFavoritesList={this.updateFavoritesList}
+                            allFavorites={this.state.favorites}
                             shows={this.state.data}
                         />
                     </div>

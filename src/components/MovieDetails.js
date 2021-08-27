@@ -4,29 +4,29 @@ import AddToFavoritesButton from "./AddToFavoritesButton";
 class MovieDetails extends React.Component {
 
     render() {
-        const show = this.props.shows;
+        const record = this.props.show;
 
-        const index = this.props.shows.id;
+        const showId = this.props.showId;        
 
-        const record = this.props.record;
-        console.log(record);
+
+        const handleFavorites = (key) => (event) =>{
+            this.props.onFavoriteClick(key);
+        }
 
         return (
             <table className="ui celled table">
                 <tbody>
                 <tr>
                     <td>
-                        {show.map((record, index) => (
                             <div
                                 className="ui placeholder segment"
-                                key={index}
+                                key={showId}
                                 style={{
                                     marginLeft: '20px',
                                     marginRight: '10px',
                                     marginTop: '10px',
                                     gridGap: '0 10px'
-                                }}
-                            >
+                                }}>
                                 <img
                                     className="ui medium rounded image"
                                     src={record.show.image && record.show.image.original}
@@ -64,10 +64,9 @@ class MovieDetails extends React.Component {
                                         </tr>
                                         </tbody>
                                     </table>
-                                    <AddToFavoritesButton/>
+                                    <AddToFavoritesButton addedToFavorites={this.props.addedToFavorites} onClick={handleFavorites} showId={showId}/>
                                 </div>
                             </div>
-                        ))}
                     </td>
                 </tr>
                 </tbody>
