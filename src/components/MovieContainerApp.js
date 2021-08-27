@@ -38,8 +38,10 @@ class MovieContainerApp extends React.Component {
                     Tv Shows
                 </div>
                 <div className="ui segment">
-                    <div className="ui three column grid">
-                        <MoviesList movies={this.state.data}/>
+                    <div className="ui celled table">
+                        <MoviesList
+                            shows={this.state.data}
+                        />
                     </div>
                 </div>
 

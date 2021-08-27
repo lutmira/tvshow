@@ -4,11 +4,16 @@ import MovieDetails from "./MovieDetails";
 class MoviesList extends React.Component {
 
     render() {
-        return this.props.movies.map((record) => {
-            return <MovieDetails
-                key={record.show.id}
-                record={record}
-            />
+        const shows = this.props.shows;
+
+        return shows.map((record) => {
+            return (
+                <MovieDetails
+                    key={record.show.id}
+                    record={record}
+                    shows={shows}
+                />
+            )
         })
     }
 }
