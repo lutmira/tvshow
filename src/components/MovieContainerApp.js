@@ -39,7 +39,7 @@ class MovieContainerApp extends React.Component {
 						color: "teal",
 						fontSize: "30px",
 					}}>
-					Tv Shows
+					TV Shows
 				</div>
 				<div className='ui segment'>
 					<div className='ui celled table'>
