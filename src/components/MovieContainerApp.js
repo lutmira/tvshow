@@ -31,9 +31,9 @@ class MovieContainerApp extends React.Component {
 
 	render() {
 		return (
-			<div className='ui container' style={{ marginTop: "10px" }}>
+			<div className='ui placeholder segment'>
 				<div
-					className='ui segment'
+					className='ui teal inverted segment'
 					style={{
 						textAlign: "center",
 						color: "teal",
@@ -41,8 +41,8 @@ class MovieContainerApp extends React.Component {
 					}}>
 					TV Shows
 				</div>
-				<div className='ui segment'>
-					<div className='ui three column grid'>
+				<div className='ui teal segment'>
+					<div className='ui three column grid' style={{marginTop: "10px"}}>
 						<MoviesList
 							updateFavoritesList={this.updateFavoritesList}
 							allFavorites={this.state.favorites}

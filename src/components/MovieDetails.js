@@ -16,15 +16,15 @@ class MovieDetails extends React.Component {
 				className="ui teal placeholder segment"
 				key={showId}
 				style={{
-					marginLeft: "45px",
+					marginLeft: "70px",
 					marginTop: "10px",
-					gridGap: "0 20px",
+					gridGap: "0 5px",
 				}}
 			>
 				<img
 					className='ui medium rounded image'
-					src={record.show.image && record.show.image.medium}
-					style={{width: "275px"}}
+					src={record.show.image && record.show.image.original}
+					style={{width: "350px"}}
 				/>
 				<div className="ui teal segment">
 					<h4
