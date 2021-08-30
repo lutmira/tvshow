@@ -42,8 +42,7 @@ class MovieContainerApp extends React.Component {
 					TV Shows
 				</div>
 				<div className='ui segment'>
-					<div className='ui celled table'>
-						{/* <MovieListTable shows={this.state.data}/> */}
+					<div className='ui three column grid'>
 						<MoviesList
 							updateFavoritesList={this.updateFavoritesList}
 							allFavorites={this.state.favorites}
